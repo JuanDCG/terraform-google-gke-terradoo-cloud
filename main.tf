@@ -5,9 +5,9 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 terraform {
-  # The modules used in this example have been updated with 0.12 syntax, additionally we depend on a bug fixed in
-  # version 0.12.7.
-  required_version = ">= 0.12.7"
+  # The modules used in this example have been updated with 0.13 syntax, additionally we depend on a bug fixed in
+  # version 0.13.5.
+  required_version = ">= 0.13.5"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ terraform {
 # ---------------------------------------------------------------------------------------------------------------------
 
 provider "google" {
-  version = "~> 3.1.0"
+  version = "~> 3.3"
   project = var.project
   region  = var.region
 
@@ -32,7 +32,7 @@ provider "google" {
 }
 
 provider "google-beta" {
-  version = "~> 3.1.0"
+  version = "~> 3.3"
   project = var.project
   region  = var.region
 
@@ -55,7 +55,7 @@ data "google_client_config" "client" {}
 data "google_client_openid_userinfo" "terraform_user" {}
 
 provider "kubernetes" {
-  version = "~> 1.7.0"
+  version = "~> 1.11.0"
 
   load_config_file       = false
   host                   = data.template_file.gke_host_endpoint.rendered
@@ -162,7 +162,7 @@ resource "google_container_node_pool" "node_pool" {
     # https://github.com/gruntwork-io/terraform-google-network/tree/master/modules/vpc-network#access-tier
     tags = [
       module.vpc_network.private,
-      "helm-example",
+      "terradoo-cloud",
     ]
 
     disk_size_gb = "30"
@@ -213,7 +213,7 @@ resource "random_string" "suffix" {
 }
 
 module "vpc_network" {
-  source = "github.com/gruntwork-io/terraform-google-network.git//modules/vpc-network?ref=v0.4.0"
+  source = "github.com/gruntwork-io/terraform-google-network.git//modules/vpc-network"
 
   name_prefix = "${var.cluster_name}-network-${random_string.suffix.result}"
   project     = var.project

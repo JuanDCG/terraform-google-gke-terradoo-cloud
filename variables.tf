@@ -26,13 +26,13 @@ variable "region" {
 variable "cluster_name" {
   description = "The name of the Kubernetes cluster."
   type        = string
-  default     = "example-cluster"
+  default     = "terradoo-cluster-cluster"
 }
 
 variable "cluster_service_account_name" {
   description = "The name of the custom service account used for the GKE cluster. This parameter is limited to a maximum of 28 characters."
   type        = string
-  default     = "example-cluster-sa"
+  default     = "terradoo-cloud-cluster-sa"
 }
 
 variable "cluster_service_account_description" {
