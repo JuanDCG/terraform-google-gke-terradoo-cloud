@@ -1,3 +1,31 @@
+
+# PoC Odoo on GKE
+
+Ok, this a fork-based repository to start with it a PoC about Odoo on GKE.
+
+So, PoC = All for Testing, just to play and for fun.
+
+You need to use the base directory to set up a GKE Public cluster with Helm and Bitnami/Odoo package/chart.
+
+1. Initialize terraform:
+   - `terraform init`
+2. Check the terraform plan:
+   - `terraform plan -out=terradoo-cloud.tfstate`
+3. Apply the terraform code:
+   - `terraform apply "terradoo-cloud.tfstate"`
+4. Destroy ALL
+   - `terraform destroy`
+
+
+The main goal of this PoC is customize `values-odoo.yaml` with the reference of [Odoo Bitnami from Artifact Hub](https://artifacthub.io/packages/helm/bitnami/odoo)
+
+
+
+
+###
+
+# Readme of Forked respository
+
 [![Maintained by Gruntwork.io](https://img.shields.io/badge/maintained%20by-gruntwork.io-%235849a6.svg)](https://gruntwork.io/?ref=repo_google_gke)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/gruntwork-io/terraform-google-gke.svg?label=latest)](https://github.com/gruntwork-io/terraform-google-gke/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.12.0-blue.svg)
