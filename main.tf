@@ -142,7 +142,7 @@ resource "google_container_node_pool" "node_pool" {
 
   autoscaling {
     min_node_count = "1"
-    max_node_count = "5"
+    max_node_count = "3"
   }
 
   management {
@@ -271,12 +271,15 @@ resource "kubernetes_cluster_role_binding" "user" {
 # so Helm can install the nginx chart.
 # ---------------------------------------------------------------------------------------------------------------------
 
-resource "helm_release" "nginx" {
+resource "helm_release" "odoo" {
   depends_on = [google_container_node_pool.node_pool]
 
   repository = "https://charts.bitnami.com/bitnami"
-  name       = "nginx"
-  chart      = "nginx"
+  name       = "odoo-r1"
+  chart      = "odoo"
+  values     = [
+                "${file("values.yaml")}"
+               ]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
