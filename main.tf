@@ -278,7 +278,7 @@ resource "helm_release" "odoo" {
   name       = "odoo-r1"
   chart      = "odoo"
   values     = [
-                "${file("values.yaml")}"
+                "${file("values-odoo.yaml")}"
                ]
 }
 
