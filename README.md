@@ -1,6 +1,6 @@
 
 # PoC Odoo on GKE
-=================
+
 
 Ok, this a fork-based repository to start with it a PoC about Odoo on GKE.
 
@@ -22,7 +22,8 @@ The main goal of this PoC is customize `values-odoo.yaml` with the reference of 
 
 =====================
 =====================
-=====================
+---------------------
+---------------------
 
 # Readme of Forked respository
 
