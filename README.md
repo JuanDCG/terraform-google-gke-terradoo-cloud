@@ -21,9 +21,8 @@ You need to use the base directory to set up a GKE Public cluster with Helm and 
 The main goal of this PoC is customize `values-odoo.yaml` with the reference of [Odoo Bitnami from Artifact Hub](https://artifacthub.io/packages/helm/bitnami/odoo)
 
 =====================
-
-
-###
+=====================
+=====================
 
 # Readme of Forked respository
 
