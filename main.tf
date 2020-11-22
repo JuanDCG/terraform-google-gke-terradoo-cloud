@@ -151,11 +151,11 @@ resource "google_container_node_pool" "node_pool" {
   }
 
   node_config {
-    image_type   = "COS"
+    image_type   = "ubuntu_containerd"
     machine_type = "n1-standard-1"
 
     labels = {
-      all-pools-example = "true"
+      all-pools-terradoo-cloud = "true"
     }
 
     # Add a private tag to the instances. See the network access tier table for full details:
@@ -268,7 +268,7 @@ resource "kubernetes_cluster_role_binding" "user" {
 # ---------------------------------------------------------------------------------------------------------------------
 # DEPLOY A SAMPLE CHART
 # A chart repository is a location where packaged charts can be stored and shared. Define Bitnami Helm repository location,
-# so Helm can install the nginx chart.
+# so Helm can install the odoo chart.
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "helm_release" "odoo" {
