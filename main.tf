@@ -282,16 +282,6 @@ resource "helm_release" "odoo" {
                 "${file("values-odoo.yaml")}"
                ]
 
-  set {
-    name  = "cluster.enabled"
-    value = "true"
-  }
-
-  set {
-    name  = "metrics.enabled"
-    value = "true"
-  }
-
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
