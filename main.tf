@@ -275,11 +275,23 @@ resource "helm_release" "odoo" {
   depends_on = [google_container_node_pool.node_pool]
 
   repository = "https://charts.bitnami.com/bitnami"
-  name       = "odoo-r1"
+  name       = "odoo-release-1"
   chart      = "odoo"
+  version    = "17.0.0"
   values     = [
                 "${file("values-odoo.yaml")}"
                ]
+
+  set {
+    name  = "cluster.enabled"
+    value = "true"
+  }
+
+  set {
+    name  = "metrics.enabled"
+    value = "true"
+  }
+
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
