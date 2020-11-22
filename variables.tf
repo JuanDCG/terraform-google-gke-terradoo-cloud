@@ -32,7 +32,7 @@ variable "cluster_name" {
 variable "cluster_service_account_name" {
   description = "The name of the custom service account used for the GKE cluster. This parameter is limited to a maximum of 28 characters."
   type        = string
-  default     = "terradoo-cloud-cluster-service-account"
+  default     = "terradoo-cloud-service-account"
 }
 
 variable "cluster_service_account_description" {
